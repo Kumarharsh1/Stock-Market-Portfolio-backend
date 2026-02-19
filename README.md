@@ -1,39 +1,41 @@
-For Backend README.md
-Go to: https://github.com/Kumarharsh1/Stock-Market-Portfolio-backend
-Click README.md → pencil icon ✏️ → replace everything with this:
+ https://github.com/Kumarharsh1/Stock-Market-Portfolio-backend
 
-markdown
+
 # Stock Market Portfolio Backend
 
-Hey, this is the backend for my portfolio dashboard project. It's a simple Node.js/Express server that feeds data to the frontend.
+This is the backend for my stock market portfolio project.  
+It is a simple Node.js + Express server that sends stock data to the frontend.
 
 ## Live API
 https://stock-market-portfolio-backend-km7b.onrender.com
 
-text
-
-## What it does
-- Has 30 Indian stocks (the ones you asked for)
-- Calculates all the numbers - investment, current value, gains/losses
-- Groups everything by sector
-- Sends JSON to the frontend every time it's called
+## What this backend does
+- Contains data for 30 Indian stocks
+- Calculates:
+  - Total investment
+  - Current value
+  - Profit / Loss
+- Groups stocks by sector
+- Sends clean JSON data to the frontend
 
 ## API Endpoints
 
-**GET /api/portfolio**
-This returns ALL the data. Try it: 
+### GET /api/portfolio
+Returns the complete portfolio data.
+
+Try it here:  
 https://stock-market-portfolio-backend-km7b.onrender.com/api/portfolio
 
-**GET /health**
-Just checks if the server is alive. Nothing fancy.
+### GET /health
+Simple health check to see if the server is running.
 
-## Tech I used
-- Node.js (v18)
-- Express (for routing)
-- Axios (for calling APIs)
-- Render (for hosting - it's free)
+## Tech Used
+- Node.js
+- Express
+- Axios
+- Hosted on :contentReference[oaicite:0]{index=0}
 
-## Run it locally (if you want)
+## Run Locally
 
 ```bash
 git clone https://github.com/Kumarharsh1/Stock-Market-Portfolio-backend.git
@@ -41,42 +43,52 @@ cd Stock-Market-Portfolio-backend
 npm install
 cp .env.example .env
 npm run dev
-Then open http://localhost:5000
+
+
+Server will run at:
+http://localhost:5000
 
 Environment Variables
-Copy .env.example to .env and add these if you have API keys (not required, I have fallback data):
 
-text
+Create a .env file using .env.example
+
 ALPHA_VANTAGE_KEY=your_key_here
 TWELVE_DATA_KEY=your_key_here
 PORT=5000
-The API key situation
-The assignment wanted Yahoo/Google Finance but they don't have proper free APIs. So I used:
 
-Alpha Vantage (primary)
+
+API keys are optional.
+If APIs fail, fallback data is used.
+
+API Data Notes
+
+Yahoo Finance and Google Finance do not provide free APIs
+
+Used:
+
+Alpha Vantage (main)
 
 Twelve Data (backup)
 
-Cached everything for 5 minutes so I don't hit rate limits
+Data is cached for 5 minutes to avoid rate limits
 
-Fallback market data when APIs fail
-
-Folder structure
-Nothing complicated:
-
-text
+Folder Structure
 backend/
 ├── src/
-│   └── server.js          # all the code lives here
-├── .env.example            # shows what env vars you need
-├── .gitignore              # stuff I don't want on GitHub
-├── package.json            # dependencies
-└── README.md               # this file
+│   └── server.js
+├── .env.example
+├── .gitignore
+├── package.json
+└── README.md
+
 Author
+
 Kumar Harsh
-
 Phone: 9279157296
+GitHub: https://github.com/Kumarharsh1
 
-GitHub: @Kumarharsh1
+Built for Octa Byte AI case study.
 
-Built for Octa Byte AI case study. Took longer than expected but learned a lot about deployment.
+
+---
+
